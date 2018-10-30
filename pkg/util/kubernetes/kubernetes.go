@@ -336,6 +336,11 @@ func CreateConfigMap(kubecli corev1client.CoreV1Interface, operatorcli natsalpha
 		Cluster: &natsconf.ClusterConfig{
 			Port: int(constants.ClusterPort),
 		},
+		Debug:          cluster.Debug,
+		Trace:          cluster.Trace,
+		WriteDeadline:  cluster.WriteDeadline,
+		MaxConnections: cluster.MaxConnections,
+		MaxPayload:     cluster.MaxPayload,
 	}
 	addTLSConfig(sconfig, cluster)
 	err := addAuthConfig(kubecli, operatorcli, ns, clusterName, sconfig, cluster, owner)

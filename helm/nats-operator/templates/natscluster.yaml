@@ -11,7 +11,7 @@ spec:
     reloaderImage: {{ .Values.configReload.repository }}
     reloaderImageTag: {{ .Values.configReload.tag }}
     reloaderImagePullPolicy: {{ .Values.configReload.pullPolicy }}
-  
+
     enableMetrics: {{ .Values.metrics.enabled }}
     metricsImage: {{ .Values.metrics.repository }}
     metricsImageTag: {{ .Values.metrics.tag }}
@@ -30,3 +30,9 @@ spec:
     # Certificates to secure the routes.
     routesSecret: {{ .Values.tls.routesSecret }}
   {{- end }}
+
+  debug: {{ .Values.debug }}
+  trace: {{ .Values.trace }}
+  max_connections: {{ .Values.max_connections }}
+  max_payload: {{ .Values.max_payload }}
+  write_deadline: {{ .Values.write_deadline }}

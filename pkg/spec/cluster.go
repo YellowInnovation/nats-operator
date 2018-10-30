@@ -87,6 +87,21 @@ type ClusterSpec struct {
 
 	// Auth is the configuration to set permissions for users.
 	Auth *AuthConfig `json:"auth,omitempty"`
+
+	// Enable debug
+	Debug bool `json:"debug,omitempty"`
+
+	// Enable trace
+	Trace bool `json:"trace,omitempty"`
+
+	// WriteDeadline server setting
+	WriteDeadline string `json:"write_deadline,omitempty"`
+
+	// MaxConnections server setting
+	MaxConnections int `json:"max_connections,omitempty"`
+
+	// MaxPayload server setting
+	MaxPayload int `json:"max_payload,omitempty"`
 }
 
 // TLSConfig is the optional TLS configuration for the cluster.
